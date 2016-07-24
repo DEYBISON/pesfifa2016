@@ -1,0 +1,319 @@
+/**
+ * Simple Style Example mod_vvisit_counter by Michael Majunke
+ *
+ * $Date: 2014-10-27 17:37:47 +0100 (Mo, 27. Okt 2014) $
+ * $Revision: 405 $
+ * $Author: mmicha $
+ * @copyright Copyright (C) 2014 Majunke Michael http://www.mmajunke.de/
+**/
+
+/** Main Div */
+/** border: 1px solid #000000; */
+div.mvc_main {
+	width: 100%;
+	text-align: center;
+}
+/** PRE */
+div.mvc_pre {
+	clear: both;
+  text-align: center;
+	background: #aaaaaa;
+	font-size: 100%;
+	font-weight: bold;
+	margin:  2px;
+	padding: 2px;
+}
+/** POST */
+div.mvc_post {
+  clear: both;
+  text-align: center;
+	background: #aaaaaa;
+	font-size: 100%;
+	font-weight: bold;
+	margin:  2px;
+	padding: 2px;
+}
+/** IP */
+div.mvc_ip {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+}
+span.vcounter_TypeTextIP {
+	clear: both;
+	text-align: center;
+}
+img.mvc_digitIPImg {
+	clear: both;
+}
+/** IP Country Code */
+div.mvc_ipcountrycode {
+  clear: both;
+  text-align: center;
+}
+/** IP Country  */
+div.mvc_ipcountry {
+	clear: both;
+  text-align: center;
+}
+/** IP Flag */
+div.mvc_ipflag {
+  clear: both;
+  text-align: center;
+}
+img.mvc_ipflagimg {
+	clear: both;
+}
+/** Counter */
+div.mvc_digitCounter {
+	clear: both;
+	margin:  2px;
+	padding: 2px;
+	text-align: center;
+}
+img.mvc_digitCounterImg {
+	clear: both;
+}
+span.vcounter_TypeText {
+	clear: both;
+	text-align: center;
+}
+/** 'People' Table */
+div.mvc_people {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+}
+table.mvc_peopleTable {
+	clear: both;
+	text-align: center;
+	margin-left:auto;
+  margin-right:auto;
+  border: none;
+}
+table.mvc_peopleTable tr  {
+  text-align: center;
+  border: none;
+}
+table.mvc_peopleTable td  {
+  text-align: left;
+  border: none;
+  border-bottom: 1px rgb(215,215,215) dashed;
+}
+table.mvc_peopleTable td + td {
+  text-align: left;
+  border: none;
+  border-bottom: 1px rgb(215,215,215) dashed;
+}
+table.mvc_peopleTable td + td + td {
+  text-align: right;
+  border: none;
+  border-bottom: 1px rgb(215,215,215) dashed;
+}
+
+img.mvc_peopleImg {
+	clear: both;
+}
+/** Statistik Image */
+div.mvc_stat {
+	clear: both;
+	text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+}
+img.mvc_statImg {
+	clear: both;
+}
+/** a 'Spacer', the '-' in the order Param */
+div.mvc_spacer {
+  clear: both;
+  text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/**  Guests */
+div.mvc_guests {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_guests span.title {
+	width: 35%;
+	text-align: left;
+	float: left;
+	margin-left: 5%;
+	white-space:nowrap;
+}
+div.mvc_guests span.trenner {
+	width: 5%;
+	text-align: left;
+	float: left;
+	margin-left: 5px;
+}
+div.mvc_guests span.value {
+	text-align: left;
+	margin-right: 5%;
+	white-space:nowrap;
+	float: right;
+}
+/**  Logged In */
+div.mvc_loggedInUsers {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_loggedInUsers span.title {
+	width: 35%;
+	text-align: left;
+	float: left;
+	margin-left: 5%;
+	white-space:nowrap;
+}
+div.mvc_loggedInUsers span.trenner {
+	width: 5%;
+	text-align: left;
+	float: left;
+	margin-left: 5px;
+}
+div.mvc_loggedInUsers span.value {
+	text-align: left;
+	margin-right: 5%;
+	white-space:nowrap;
+	float: right;
+}
+/** Reg Today */
+div.mvc_reg_users_today {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_reg_users_today span.title {
+	width: 35%;
+	text-align: left;
+	float: left;
+	margin-left: 5%;
+	white-space:nowrap;
+}
+div.mvc_reg_users_today span.trenner {
+	width: 5%;
+	text-align: left;
+	float: left;
+	margin-left: 5px;
+}
+div.mvc_reg_users_today span.value {
+	text-align: left;
+	margin-right: 5%;
+	white-space:nowrap;
+	float: right;
+}
+/** Reg All */
+div.mvc_reg_users_all {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_reg_users_all span.title {
+	width: 35%;
+	text-align: left;
+	float: left;
+	margin-left: 5%;
+	white-space:nowrap;
+}
+div.mvc_reg_users_all span.trenner {
+	width: 5%;
+	text-align: left;
+	float: left;
+	margin-left: 5px;
+}
+div.mvc_reg_users_all span.value {
+	text-align: left;
+	margin-right: 5%;
+	white-space:nowrap;
+	float: right;
+}
+/** Logged In */
+div.mvc_loggedInUserNamens {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_loggedInUserNamens div.title {
+  margin-left: 5%;
+  text-align:left;
+  white-space:nowrap;
+}
+div.mvc_loggedInUserNamens div.user {
+  margin-left: 25%;
+  text-align:left;
+  white-space:nowrap;
+}
+div.mvc_loggedInUserNamens a.userlink {
+}
+/** Registered Today */
+div.mvc_regTodayUserNamens {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_regTodayUserNamens div.title {
+  margin-left: 5%;
+  text-align:left;
+  white-space:nowrap;
+}
+div.mvc_regTodayUserNamens div.user {
+  margin-left: 25%;
+  text-align:left;
+  white-space:nowrap;
+}
+div.mvc_regTodayUserNamens a.userlink {
+}
+/** highest user */
+div.mvc_max_user_day {
+  clear: both;
+  text-align: center;
+	font-size: 100%;
+	margin:  2px;
+	padding: 2px;
+  white-space:nowrap;
+}
+div.mvc_max_user_day span.title {
+	width: 35%;
+	text-align: left;
+	float: left;
+	margin-left: 5%;
+	white-space:nowrap;
+}
+div.mvc_max_user_day span.trenner {
+	width: 5%;
+	text-align: left;
+	float: left;
+	margin-left: 5px;
+}
+/** float: right; */
+div.mvc_max_user_day span.value {
+	text-align: left;
+	margin-right: 5%;
+	white-space:nowrap;
+	float: right;
+}

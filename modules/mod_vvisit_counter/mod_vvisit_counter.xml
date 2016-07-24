@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 3.0//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/3.0/template-install.dtd">
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>Visitors Counter</name>
+	<creationDate>2014-11-01</creationDate>
+	<author>Majunke Michael</author>
+	<authorEmail>majunke@mmajunke.de</authorEmail>
+	<authorUrl>http://www.mmajunke.de/</authorUrl>
+	<copyright>Copyright (C) 2014 Majunke Michael. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+	<version>2.0.4</version>
+	<description><![CDATA[
+		<h3>Visitors Counter - by Majunke Michael</h3>
+		<h3>Version for Joomla 3</h3>
+		<p>Release date: <b>2014-11-01</b></p>
+		<p>Homepage: <b><a href="http://www.mmajunke.de" title="www.mmajunke.de" target="_blank">http://www.mmajunke.de/</a></b></p>
+		<p>This module shows you the Visitors of your site and much more :)</p>
+		<p>
+	    License Information Since 1.9.3 :<br/>
+	       If you would use the IP-Flags/IP-Country Features, read license information
+           from http://ip-to-country.webhosting.info !
+		</p>
+		<p>
+		  If you had some fun around the counter or perhaps even used my counter
+          for your own projects - <b>PLEASE</b> take a minute to think about
+          <a href="http://www.mmajunke.de/jn/index.php/technik/entwicklunglk/modvvisitcounterdl.html#Spende">Donating</a>.
+          <br/>
+          <b>Thanks.</b>
+		</p>
+	]]></description>
+	<files>
+		<filename module="mod_vvisit_counter">index.html</filename>
+		<filename module="mod_vvisit_counter">mod_vvisit_counter.php</filename>
+		<filename module="mod_vvisit_counter">helper.php</filename>
+		<filename module="mod_vvisit_counter">diagram.php</filename>
+		<filename module="mod_vvisit_counter">readme.html</filename>
+		<filename module="mod_vvisit_counter">mvc.css</filename>
+		<filename module="mod_vvisit_counter">ipcountry/index.html</filename>
+		<filename module="mod_vvisit_counter">ipcountry/iptocountry.php</filename>
+		<filename module="mod_vvisit_counter">ipcountry/ip-to-country.csv</filename>
+		<filename module="mod_vvisit_counter">ipcountry/info.txt</filename>
+		<filename module="mod_vvisit_counter">tmpl/index.html</filename>
+		<filename module="mod_vvisit_counter">tmpl/default.php</filename>
+		<filename module="mod_vvisit_counter">trigger/index.html</filename>
+        <folder module="mod_vvisit_counter">images</folder>
+	</files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB.mod_vvisit_counter.ini</language>
+        <language tag="de-DE">language/de-DE.mod_vvisit_counter.ini</language>
+    </languages>
+
+	<config>
+  	  <fields name="params">
+  	    <fieldset name="basic">
+
+		<!-- language from joomla -->
+		<field name="moduleclass_sfx" type="text" default="" label="CSS_SUFFIX_LBL" description="CSS_SUFFIX_DESC"/>
+		<field name="cssfile" type="filelist" default="mvc.css" label="CSS_FILE_LBL" description="CSS_FILE_DESC" directory="modules/mod_vvisit_counter" filter="[.]*\.css" exclude="" stripext="" />
+
+		<!-- Basisdaten-->
+		<field type="spacer" hr="true" />
+		<field name="s_countUserAsNewType" type="radio" default="0"  label="COUNT_AS_NEW_IP_LBL" description="COUNT_AS_NEW_IP_DESC">
+			<option value="1">DAILY_LBL</option>
+			<option value="0">LOCKTIME_EXPIRED_LBL</option>
+		</field>
+		<field name="locktime" type="text" default="15" label="LOCKTIME_LBL" description="LOCKTIME_DESC"/>
+		<field name="initialvalue" type="text" default="0" label="INITIAL_VALUE_LBL" description="INITIAL_VALUE_DESC"/>
+		<field name="records" type="text" default="100000" label="RECORDS_LBL" description="RECORDS_DESC"/>
+		<field name="recordDays" type="text" default="-1" label="RECORDDAYS_LBL" description="RECORDDAYS_DESC"/>
+		<field name="s_trycreatetable" type="radio" default="1" label="CREATE_TABLE_LBL" description="CREATE_TABLE_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_createtableName" type="text" default="vvisitcounter" label="TABLE_NAME_LBL" description="TABLE_NAME_DESC"/>
+		<field name="read_only_counter" type="radio" default="0" label="READ_ONLY_LBL" description="READ_ONLY_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_useCookies" type="radio" default="1" label="USE_COOKIES_LBL" description="USE_COOKIES_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_firstCheckForwarderIP" type="radio" default="0" label="FIRST_CHECK_FORWARDER_LBL" description="FIRST_CHECK_FORWARDER_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+    	<field name="s_ipAlsoInRaw" type="radio" default="0" label="STORE_IP_ALSO_AS_RAW_LBL" description="STORE_IP_ALSO_AS_RAW_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+
+		<!-- IP Adresse anzeigen -->
+		<field type="spacer" hr="true" />
+		<field name="s_ip" type="radio" default="0" label="SHOP_IP_LBL" description="SHOP_IP_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="ip" type="text" default="" label="IP_PRE_TEXT_LBL" description="IP_PRE_TEXT_DESC" filter="raw"/>
+
+		<field name="ip_type" type="folderlist" directory="modules/mod_vvisit_counter/images" exclude="flags|tbl" default="text" hide_none="true" label="IP_DISPLAY_TYPE_LBL" description="IP_DISPLAY_TYPE_DESC"/>
+
+		<field name="filterIPs" type="textarea" cols="20" rows="5"
+		       default="" label="FILTER_IP_S_LBL"
+		       description="FILTER_IP_S_DESC"
+           filter="raw"/>
+		<field name="s_trycreateIPCtable" type="radio" default="0" label="CREATE_TABLE_IP_TO_COUNTRY_LBL"
+		       description="CREATE_TABLE_IP_TO_COUNTRY_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_ipCcode" type="radio" default="0" label="SHOW_COUNTRY_CODE_LBL"
+		       description="SHOW_COUNTRY_CODE_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_ipCountry" type="radio" default="0" label="SHOW_COUNTRY_LBL"
+		       description="SHOW_COUNTRY_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_ipCflag" type="radio" default="0" label="SHOW_COUNTRY_FLAG_LBL"
+		       description="SHOW_COUNTRY_FLAG_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_ipCflag_width" type="text" default="20" label="IPFLAG_WIDTH_LBL" description="IPFLAG_WIDTH_DESC"/>
+		<field name="s_ipCflag_height" type="text" default="13" label="IPFLAG_HEIGHT_LBL" description="IPFLAG_HEIGHT_DESC"/>
+		<field name="s_ipCLic" type="radio" default="1" label="APPEND_IP_LICENSE_LBL"
+		       description="APPEND_IP_LICENSE_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="IP2C LicenseText" type="text"
+		       default="&lt;p style=&quot;font-size:25%&quot;&gt;This page uses the IP-to-Country Database provided by WebHosting.Info (http://www.webhosting.info), available from http://ip-to-country.webhosting.info&lt;/p&gt;"
+		       label="APPEND_IP_LICENSE_TEXT_LBL"
+			     description="APPEND_IP_LICENSE_TEXT_DESC"
+           filter="raw"/>
+		<!-- UserAgents / Robots-->
+		<field type="spacer" hr="true" />
+		<field name="s_autoFilterRobots" type="radio" default="0" label="AUTOFILTER_ROBOTS_LBL"
+		       description="AUTOFILTER_ROBOTS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="filterUserAgents" type="textarea" cols="20" rows="5"
+		       default="" label="FILTER_USERAGENTS_LBL"
+		       description="FILTER_USERAGENTS_DESC"
+           filter="raw"/>
+    <field name="filterUserAgentsFile"
+		       type="filelist"
+			     label="FILTER_USERAGENTS_FILE_LBL"
+			     description="FILTER_USERAGENTS_FILE_DESC"
+			     directory="modules/mod_vvisit_counter"
+			     filter="[.]*\.bot"
+			     exclude="" stripext="" hide_default="true" />
+		<field name="saveUserAgents" type="radio" default="0" label="SAVE_USERAGENTS_LBL" description="SAVE_USERAGENTS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="filterUsers" type="list" default="0" label="FILTER_USERS_LBL" description="FILTER_USERS_DESC">
+			<option value="0">NO_USER_FILTER</option>
+			<option value="1">GUEST_FILTER</option>
+			<option value="2">MEMBERS_FILTER</option>
+		</field>
+		<!-- Sortieren-->
+		<field type="spacer" hr="true" />
+		<field name="the_order" type="text" default="1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16" size="40" label="ORDER_LBL" description="ORDER_DESC"/>
+
+		<!-- Link on Views-->
+		<field type="spacer" hr="true" />
+		<field name="linkonviewView" type="text" default="" size="40" label="LINKONVIEW_LBL" description="LINKONVIEW_DESC" filter="raw"/>
+		<field name="linkonviewLink" type="text" default="" size="40" label="LINKONVIEW_LINK_LBL" description="LINKONVIEW_LINK_DESC" filter="raw"/>
+		<field name="linkonviewTarget" type="text" default="" size="40" label="LINKONVIEW_TARGET_LBL" description="LINKONVIEW_TARGET_DESC" filter="raw"/>
+
+		<!-- Translate Texts-->
+		<field type="spacer" hr="true" />
+		<field name="s_translate_table_texts" type="radio" default="0"
+		       label="TRANSLATE_TABLE_TEXTS_LBL" description="TRANSLATE_TABLE_TEXTS_DESC">
+			<option value="2">FROM_JOOMLA_OPT</option>
+      <option value="1">FROM_BROWSER_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<!-- People Table View-->
+		<field type="spacer" hr="true" />
+		<field name="s_today" type="radio" default="1" label="SHOW_TODAY_LBL" description="SHOW_TODAY_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="today" type="text" default="Today" label="TODAY_TEXT_LBL" description="TODAY_TEXT_DESC"/>
+		<field name="s_yesterday" type="radio" default="1" label="SHOW_YESTERDAY_LBL" description="SHOW_YESTERDAY_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="yesterday" type="text" default="Yesterday" label="YESTERDAY_TEXT_LBL" description="YESTERDAY_TEXT_DESC"/>
+		<field name="s_week" type="radio" default="1" label="SHOW_THIS_WEEK_LBL" description="SHOW_THIS_WEEK_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_week_startday" type="radio" default="1" label="THIS_WEEK_STARTDAY_LBL" description="THIS_WEEK_STARTDAY_DESC">
+			<option value="0">SUNDAY_OPT</option>
+			<option value="1">MONDAY_OPT</option>
+			<option value="2">SATURDAY_OPT</option>
+ 		</field>
+		<field name="week" type="text" default="This_Week" label="THIS_WEEK_TEXT_LBL" description="THIS_WEEK_TEXT_DESC"/>
+		<field name="s_month" type="radio" default="1" label="SHOW_THIS_MONTH_LBL" description="SHOW_THIS_MONTH_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="month" type="text" default="This_Month" label="THIS_MONTH_TEXT_LBL" description="THIS_MONTH_TEXT_DESC"/>
+		<field name="s_all" type="radio" default="1" label="SHOW_ALL_LBL" description="SHOW_ALL_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="all" type="text" default="All_Days" label="SHOW_ALL_TEXT_LBL" description="SHOW_ALL_TEXT_DESC"/>
+    <field name="show_UsageImgs" type="folderlist" directory="modules/mod_vvisit_counter/images/tbl" default="peoples" hide_default="true" label="SHOW_IMAGES_P_LBL" description="SHOW_IMAGES_P_DESC"/>
+
+    <!-- -->
+    <field type="spacer" hr="true" />
+		<field name="s_highestVisitsDay" type="radio" default="0" label="SHOW_HIGHEST_VISITS_DAY_LBL" description="SHOW_HIGHEST_VISITS_DAY_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="highestVisitsDayText" type="text" default="Highest" label="SHOW_HIGHEST_VISITS_DAY_TEXT_LBL" description="SHOW_HIGHEST_VISITS_DAY_TEXT_DESC" filter="raw"/>
+    <field name="highestVisitsDayTrenner" type="text" default=" " label="SHOW_HIGHEST_VISITS_DAY_TRENN_LBL" description="SHOW_HIGHEST_VISITS_DAY_TRENN_DESC" filter="raw"/>
+    <field name="highestVisitsDayUpdInt" type="text" default="43200" label="SHOW_HIGHEST_VISITS_UPD_INT_LBL" description="SHOW_HIGHEST_VISITS_UPD_INT_DESC"/>
+    <field name="highestVisitsDayTValue" type="text" default=" $d : $v" label="SHOW_HIGHEST_VISITS_TEMPLATE_LBL" description="SHOW_HIGHEST_VISITS_TEMPLATE_DESC" filter="raw"/>
+
+		<!-- Counter -->
+		<field type="spacer" hr="true" />
+		<field name="s_digit" type="radio" default="1" label="SHOW_DIGIT_COUNTER_LBL" description="SHOW_DIGIT_COUNTER_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_digits_min" type="text" default="6" label="MIN_DIGITS_LBL" description="MIN_DIGITS_DESC"/>
+		<field name="s_digits_max" type="text" default="6" label="MAX_DIGITS_LBL" description="MAX_DIGITS_DESC"/>
+		<field name="s_digits_warnimg" type="text" default="" label="OVERFLOW_DIGITS_IMAGEL_LBL" description="OVERFLOW_DIGITS_IMAGEL_DESC"/>
+		<field name="disp_type" type="folderlist" directory="modules/mod_vvisit_counter/images" exclude="flags|tbl" default="text" hide_none="true" label="DISPLAY_TYPE_LBL" description="DISPLAY_TYPE_DESC"/>
+		<field name="widthtable" type="list" default="90" label="TABLE_WIDTH_LBL" description="TABLE_WIDTH_DESC">
+			<option value="100">100%</option>
+			<option value="95">95%</option>
+			<option value="90">90%</option>
+			<option value="85">85%</option>
+			<option value="80">80%</option>
+			<option value="75">75%</option>
+			<option value="70">70%</option>
+			<option value="65">65%</option>
+			<option value="60">60%</option>
+			<option value="55">55%</option>
+			<option value="50">50%</option>
+			<option value="45">45%</option>
+			<option value="40">40%</option>
+			<option value="35">35%</option>
+			<option value="30">30%</option>
+			<option value="25">25%</option>
+			<option value="20">20%</option>
+			<option value="15">15%</option>
+			<option value="10">10%</option>
+			<option value="5">5%</option>
+		</field>
+		<!-- Statistik Image -->
+		<field type="spacer" hr="true" />
+		<field name="image_create" type="list" default="0" label="SHOW_STAT_IMAGE_LBL" description="SHOW_STAT_IMAGE_DESC">
+			<option value="2">SHOW_DETAIL_LBL</option>
+			<option value="1">SHOW_LBL</option>
+			<option value="0">HIDE_LBL</option>
+		</field>
+		<field name="image_showDays" type="text" default="0" label="STAT_DAYS_LBL" description="STAT_DAYS_DESC"/>
+		<field name="image_path" type="text" default="/tmp/imagemvc.png" label="STAT_IMAGE_PATH_LBL" description="STAT_IMAGE_PATH_DESC" filter="raw"/>
+		<field name="image_newerAsHours" type="text" default="6" label="STAT_TIME_ELAPSE_LBL" description="STAT_TIME_ELAPSE_DESC"/>
+		<field name="image_sizeX" type="text" default="160" label="STAT_WIDTH_LBL" description="STAT_WIDTH_DESC"/>
+		<field name="image_sizeY" type="text" default="90" label="STAT_IMAGE_HEIGHT_LBL" description="STAT_IMAGE_HEIGHT_DESC"/>
+		<field name="image_lineColor" type="text" default="#000000" label="STAT_IMG_LINE_COLOR_LBL" description="STAT_IMG_LINE_COLOR_DESC" filter="raw"/>
+		<field name="image_dia_MainbgColor" type="text" default="#FFFFFF" label="STAT_IMG_MAINBGCOLOR_LBL" description="STAT_IMG_MAINBGCOLOR_DESC" filter="raw"/>
+		<field name="image_dia_bgColor" type="text" default="#DDDDDD" label="STAT_IMG_BGCOLOR_LBL" description="STAT_IMG_BGCOLOR_DESC" filter="raw"/>
+		<field name="image_dia_RandColor" type="text" default="#FF0000" label="STAT_IMG_BORDER_COLOR_LBL" description="STAT_IMG_BORDER_COLOR_DESC" filter="raw"/>
+		<!-- User Counts -->
+		<field type="spacer" hr="true" />
+		<field name="s_loggedinUserCount" type="radio" default="0" label="SHOW_LOGGEDIN_USERS_LBL" description="SHOW_LOGGEDIN_USERS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="loggedinUserCountText" type="text" default="Logged In Users" label="LOGGED_IN_USERS_TEXT_LBL" description="LOGGED_IN_USERS_TEXT_DESC" filter="raw"/>
+		<field name="s_guestsCount" type="radio" default="0" label="SHOW_GUESTS_LBL" description="SHOW_GUESTS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="guestsText" type="text" default="Guests" label="GUESTS_TEXT_LBL" description="GUESTS_TEXT_DESC" filter="raw"/>
+		<field name="s_registeredUserCount" type="radio" default="0" label="SHOW_REGISTERED_USERS_LBL" description="SHOW_REGISTERED_USERS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="registeredUserCountText" type="text" default="Registered Users" label="REGISTERED_USERS_TEXT_LBL" description="REGISTERED_USERS_TEXT_DESC" filter="raw"/>
+		<field name="s_registeredUserCountToday" type="radio" default="0" label="SHOW_REGISTERED_TODAY_USERS_LBL" description="SHOW_REGISTERED_TODAY_USERS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="registeredUserCountTodayText" type="text" default="Registered Today" label="REGISTERED_TODAY_USERS_TEXT_LBL" description="REGISTERED_TODAY_USERS_TEXT_DESC" filter="raw"/>
+		<field name="userCountTrenner" type="text" default=" " label="USERCOUNT_TRENN_TEXT_LBL" description="USERCOUNT_TRENN_TEXT_DESC" filter="raw"/>
+    <!-- User Namen -->
+		<field type="spacer" hr="true" />
+		<field name="s_loggedinUserNamens" type="radio" default="0" label="SHOW_LOGGEDIN_USERNAMENS_LBL" description="SHOW_LOGGEDIN_USERNAMENS_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="loggedinUserNamensText" type="text" default="Now Online" label="LOGGED_IN_USERNAMENS_TEXT_LBL" description="LOGGED_IN_USERNAMENS_TEXT_DESC" filter="raw"/>
+		<field name="s_registeredUserTodayNames" type="radio" default="0" label="SHOW_REGISTERED_TODAY_USERNAMES_LBL" description="SHOW_REGISTERED_TODAY_USERNAMES_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="registeredUserTodayNamensText" type="text" default="Registered Today" label="REGISTERED_TODAY_USERNAMENS_TEXT_LBL" description="REGISTERED_TODAY_USERNAMENS_TEXT_DESC" filter="raw"/>
+		<field name="s_userNamensOut" type="list" default="1" label="USERNAMENSOUT_LBL" description="USERNAMENSOUT_DESC">
+			<option value="3">NAME_OPT</option>
+			<option value="2">ACCOUNT_OPT</option>
+			<option value="1">ACCOUNT_NAME_OPT</option>
+			<option value="0">NAME_ACCOUNT_OPT</option>
+		</field>
+		<field name="userNamensLink" type="text" default="" label="USERNAMENS_LINK_LBL" description="USERNAMENS_LINK_DESC" filter="raw"/>
+		<field name="userNamensLinkLogged" type="list" default="0" label="USERNAMENS_LINKLOGGED_LBL" description="USERNAMENS_LINKLOGGED_DESC">
+			<option value="1">ALWAYS_OPT</option>
+			<option value="0">LOGGEDIN_OPT</option>
+		</field>
+
+		<!-- :Only16 -->
+		<field name="s_onlyGroupsN_Flag" type="list" default="0" label="ONLYGROUPS_N_FLAG_LBL" description="ONLYGROUPS_N_FLAG_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_onlyGroupsN" type="usergroup" multiple="true" size="6" default="" label="ONLYGROUPS_N_LBL" description="ONLYGROUPS_N_DESC" />
+
+		<!-- glob User Settings -->
+		<field type="spacer" hr="true" />
+		<field name="s_onlyFrontEndCount" type="radio" default="1" label="SHOW_ONLY_FRONTEND_COUNT_LBL" description="SHOW_ONLY_FRONTEND_COUNT_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="s_guestInactivTime" type="text" default="300" label="GUESTS_INACTIV_TIME_LBL" description="GUESTS_INACTIV_TIME_DESC"/>
+		<field name="s_userInactivTime" type="text" default="0" label="USER_INACTIV_TIME_LBL" description="USER_INACTIV_TIME_DESC"/>
+
+		<!-- Pre and Post -->
+		<field type="spacer" hr="true" />
+		<field name="pretext" type="textarea" cols="40" rows="10" default="" label="PRE_TEXT_LBL" description="PRE_TEXT_DESC" filter="raw"/>
+		<field name="posttext" type="textarea" cols="40" rows="10" default="" label="POST_TEXT_LBL" description="POST_TEXT_DESC" filter="raw"/>
+		<!-- Mail -->
+		<field type="spacer" hr="true" />
+		<field name="mail_sending" type="radio" default="0" label="MAIL_SEND_LBL" description="MAIL_SEND_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="mail_rate" type="text" default="1000" label="MAIL_RATE_LBL" description="MAIL_RATE_DESC"/>
+		<field name="mail_userIds" type="text" default="" label="MAIL_USER_IDS_LBL" description="MAIL_USER_IDS_DESC"/>
+		<field name="mail_body" type="text" default="$a" label="MAIL_BODY_LBL" description="MAIL_BODY_DESC" filter="raw"/>
+		<field name="mail_datetime_fmt" type="text" default="d.m.Y" label="MAIL_DATETIME_FMT_LBL" description="MAIL_DATETIME_FMT_DESC" filter="raw"/>
+
+		<!-- Trigger -->
+		<field type="spacer" hr="true" />
+		<field name="trigger_script" type="radio" default="0" label="TRIGGER_SCRIPT_LBL" description="TRIGGER_SCRIPT_DESC">
+			<option value="1">YES_OPT</option>
+			<option value="0">NO_OPT</option>
+		</field>
+		<field name="trigger_script_rate" type="text" default="1000" label="TRIGGER_SCRIPT_RATE_LBL" description="TRIGGER_SCRIPT_RATE_DESC"/>
+		<field name="trigger_script_name" type="text" default="" label="TRIGGER_SCRIPT_NAME_LBL" description="TRIGGER_SCRIPT_NAME_DESC"/>
+
+		</fieldset>
+  	  </fields>
+	</config>
+
+  <!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<server type="extension" priority="1" name="Mod_VVisit_Counter Update Site">http://www.mmajunke.de/update/joomla/modvvisitcounter-update.xml</server>
+	</updateservers>
+
+</extension>
