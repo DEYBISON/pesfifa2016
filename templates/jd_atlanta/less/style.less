@@ -1,0 +1,777 @@
+/**
+ * @version   $Id: style.less 9769 2013-04-26 17:40:14Z kevin $
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+
+// Core
+body {
+	color:#5b5b5b;
+	background:#fff;
+	a, ul.menu li .separator {
+		color:#1ABC9C;
+	}
+	a:hover , a:focus {
+		color:#19A488;
+		text-decoration:none;
+	}
+}
+
+// Modules
+
+.module-title{
+	h2.title{
+		span{ font-weight:bold; }
+	}
+}
+
+.jd-title .module-title{
+	text-align:center;
+	margin-bottom:20px;
+	text-transform:capitalize;
+	.title-after{
+		width:400px;
+		display:inline-block;
+		.title-after-inner{ text-align:center; }
+		.t1:after , .t3:before{
+			height:1px;
+			content:"";
+			float:left;
+			width:175px;
+			display:block;
+			position:relative;
+			background:#d5d5d5;
+		}
+		.t2:before{
+			float:left;
+			width:50px;
+			content:"";
+			height:20px;
+			color:#1ABC9C;
+			display:block;
+			font-size:25px;
+			margin-top:-10px;
+			position:relative;
+			visibility:visible;
+			background:url(../images/heading-icon.png) no-repeat center center;
+		}
+	}
+}
+
+
+.title1 {
+	.title {
+		background: @bodycontrast;
+		border: 1px solid @bodyborder;
+	}
+}
+.title2 {
+	.title {
+		color: @bodytitle;
+		background: @footerbackground url(../images/patterns/noise.png);
+		.box-shadow(inset 0 2px 12px rgba(0,0,0,0.13));
+	}
+}
+.title4 {
+	.title {
+		color: @bodytext;
+	}
+}
+.box1 {
+	background: @bodycontrast;
+	border: 1px solid @bodyborder;
+}
+.box2 {
+	color: @bodytitle;
+	background: @footerbackground url(../images/patterns/noise.png);
+	.box-shadow(inset 0 2px 12px rgba(0,0,0,0.13));
+}
+
+// Module Overrides
+#rt-showcase, #rt-top-surround {
+	.box1, .box2 {
+		color: @bodytext;
+		text-shadow: 1px 1px 0 @bodycontrast;
+		.title {
+			color: @bodytitle;
+			text-shadow: 1px 1px 0 @bodycontrast;
+			border-bottom: 1px solid @bodyborder3;
+			.box-shadow(0 1px 0 @bodycontrast);
+		}
+	}
+	.title1 {
+		.title {
+			color: @bodytitle;
+			text-shadow: 1px 1px 0 @bodycontrast;
+			border: 1px solid @bodyborder;
+		}
+	}
+	.title2 {
+		.title {
+			color: @bodytitle;
+			text-shadow: 1px 1px 0 @bodycontrast;
+			.box-shadow(inset 0 2px 12px rgba(0,0,0,0.13));
+		}
+	}
+}
+
+// Menu Modules
+ul.menu {
+	li.active.current, li#current.active {
+		> a, > .item, > .separator {
+			color:#5b5b5b;
+		}
+	}
+}
+.readmore {
+	a {
+		color: @white;
+		&:hover {
+			color: @white;
+		}
+	}
+}
+
+/*----- Buttons and Inputs -----*/
+
+body div div.rt-container .btn-2{
+	color:#fff;
+	background:#1F2A30;
+	border:2px solid transparent;
+	&:hover , &:active , &:focus{
+		color:#fff;
+		background:#4c5559;
+	}
+}
+
+body div div.rt-container .btn-3{
+	background:#fff;
+	border:2px solid #1f2a30;
+	color:#1f2a30 !important;
+	&:hover , &:active , &:focus{
+		color:#1f2a30;
+		background:#fff;
+	}
+}
+
+body div div.rt-container .btn-4{
+	background:#fff;
+	color:#1ABC9C !important;
+	border:2px solid #1ABC9C;
+	&:hover , &:active , &:focus{
+		color:#19A488;
+		background:#fff;
+		border-color:#19A488;
+	}
+}
+
+body div div.rt-container .btn:hover,
+body div div.rt-container .btn:active,
+body div div.rt-container .btn:focus{ background:#19A488; color:#fff !important; border-color:transparent; }
+
+body div div.rt-container .btn .fa{ font-size:1.5rem; }
+
+body div div.rt-container .btn.btn-square{ border-radius:0; }
+
+body div div.rt-container .btn.btn-square[class*="btn"]{ border-radius:0; }
+
+body div div.rt-container .btn.btn-block{ display:block; }
+
+body div div.rt-container .btn.btn-alt{ background:#e52783; }
+
+body div div.rt-container .btn.btn-alt:hover,
+body div div.rt-container .btn.btn-alt:active,
+body div div.rt-container .btn.btn-alt:focus{ background:#c2176a; }
+
+body div div.rt-container .dir-ltr .btn.btn-alt.btn-special:before{
+	border-left:1px solid #cb186f;
+	border-bottom:1px solid #cb186f;
+}
+
+body div div.rt-container .dir-rtl .btn.btn-alt.btn-special:after{
+	border-right:1px solid #cb186f;
+	border-bottom:1px solid #cb186f;
+}
+
+body div div.rt-container .btn.btn-2{ background:#1f2a30; }
+
+body div div.rt-container .btn.btn-2:hover{ background:#4c5559; }
+
+body div div.rt-container .btn.btn-3,
+body div div.rt-container .btn.btn-4,
+body div div.rt-container .btn.btn-silver,
+body div div.rt-container .btn.btn-pink,
+body div div.rt-container .btn.btn-red,
+body div div.rt-container .btn.btn-purple,
+body div div.rt-container .btn.btn-orange,
+body div div.rt-container .btn.btn-blue{ color:#fff !important; }
+
+body div div.rt-container .btn.btn-3.btn-3,
+body div div.rt-container .btn.btn-4.btn-3,
+body div div.rt-container .btn.btn-silver.btn-3,
+body div div.rt-container .btn.btn-pink.btn-3,
+body div div.rt-container .btn.btn-red.btn-3,
+body div div.rt-container .btn.btn-purple.btn-3,
+body div div.rt-container .btn.btn-orange.btn-3,
+body div div.rt-container .btn.btn-blue.btn-3,
+body div div.rt-container .btn.btn-3.btn-4,
+body div div.rt-container .btn.btn-4.btn-4,
+body div div.rt-container .btn.btn-silver.btn-4,
+body div div.rt-container .btn.btn-pink.btn-4,
+body div div.rt-container .btn.btn-red.btn-4,
+body div div.rt-container .btn.btn-purple.btn-4,
+body div div.rt-container .btn.btn-orange.btn-4,
+body div div.rt-container .btn.btn-blue.btn-4{ background:transparent; }
+
+body div div.rt-container .btn.btn-3.btn-3:hover,
+body div div.rt-container .btn.btn-4.btn-3:hover,
+body div div.rt-container .btn.btn-silver.btn-3:hover,
+body div div.rt-container .btn.btn-pink.btn-3:hover,
+body div div.rt-container .btn.btn-red.btn-3:hover,
+body div div.rt-container .btn.btn-purple.btn-3:hover,
+body div div.rt-container .btn.btn-orange.btn-3:hover,
+body div div.rt-container .btn.btn-blue.btn-3:hover,
+body div div.rt-container .btn.btn-3.btn-4:hover,
+body div div.rt-container .btn.btn-4.btn-4:hover,
+body div div.rt-container .btn.btn-silver.btn-4:hover,
+body div div.rt-container .btn.btn-pink.btn-4:hover,
+body div div.rt-container .btn.btn-red.btn-4:hover,
+body div div.rt-container .btn.btn-purple.btn-4:hover,
+body div div.rt-container .btn.btn-orange.btn-4:hover,
+body div div.rt-container .btn.btn-blue.btn-4:hover,
+body div div.rt-container .btn.btn-3.btn-3:active,
+body div div.rt-container .btn.btn-4.btn-3:active,
+body div div.rt-container .btn.btn-silver.btn-3:active,
+body div div.rt-container .btn.btn-pink.btn-3:active,
+body div div.rt-container .btn.btn-red.btn-3:active,
+body div div.rt-container .btn.btn-purple.btn-3:active,
+body div div.rt-container .btn.btn-orange.btn-3:active,
+body div div.rt-container .btn.btn-blue.btn-3:active,
+body div div.rt-container .btn.btn-3.btn-4:active,
+body div div.rt-container .btn.btn-4.btn-4:active,
+body div div.rt-container .btn.btn-silver.btn-4:active,
+body div div.rt-container .btn.btn-pink.btn-4:active,
+body div div.rt-container .btn.btn-red.btn-4:active,
+body div div.rt-container .btn.btn-purple.btn-4:active,
+body div div.rt-container .btn.btn-orange.btn-4:active,
+body div div.rt-container .btn.btn-blue.btn-4:active,
+body div div.rt-container .btn.btn-3.btn-3:focus,
+body div div.rt-container .btn.btn-4.btn-3:focus,
+body div div.rt-container .btn.btn-silver.btn-3:focus,
+body div div.rt-container .btn.btn-pink.btn-3:focus,
+body div div.rt-container .btn.btn-red.btn-3:focus,
+body div div.rt-container .btn.btn-purple.btn-3:focus,
+body div div.rt-container .btn.btn-orange.btn-3:focus,
+body div div.rt-container .btn.btn-blue.btn-3:focus,
+body div div.rt-container .btn.btn-3.btn-4:focus,
+body div div.rt-container .btn.btn-4.btn-4:focus,
+body div div.rt-container .btn.btn-silver.btn-4:focus,
+body div div.rt-container .btn.btn-pink.btn-4:focus,
+body div div.rt-container .btn.btn-red.btn-4:focus,
+body div div.rt-container .btn.btn-purple.btn-4:focus,
+body div div.rt-container .btn.btn-orange.btn-4:focus,
+body div div.rt-container .btn.btn-blue.btn-4:focus{ background:transparent; }
+
+body div div.rt-container .btn.btn-3{ color:#1ABC9C !important; border:2px solid #1ABC9C; }
+
+body div div.rt-container .btn.btn-3:hover,
+body div div.rt-container .btn.btn-3:active,
+body div div.rt-container .btn.btn-3:focus{ border:2px solid #19A488; color:#19A488 !important; }
+
+body div div.rt-container .btn.btn-4{ color:#1F2A30 !important; border:2px solid #1F2A30; }
+
+body div div.rt-container .btn.btn-4:hover,
+body div div.rt-container .btn.btn-4:active,
+body div div.rt-container .btn.btn-4:focus{ border:2px solid #1F2A30; color:#1F2A30 !important; }
+
+body div div.rt-container .btn.btn-silver{ background:#95a5a6; }
+
+body div div.rt-container .btn.btn-silver.btn-3,
+body div div.rt-container .btn.btn-silver.btn-4{color:#95a5a6 !important; border:2px solid #95a5a6; }
+
+body div div.rt-container .btn.btn-silver.btn-3:hover,
+body div div.rt-container .btn.btn-silver.btn-4:hover,
+body div div.rt-container .btn.btn-silver.btn-3:active,
+body div div.rt-container .btn.btn-silver.btn-4:active,
+body div div.rt-container .btn.btn-silver.btn-3:focus,
+body div div.rt-container .btn.btn-silver.btn-4:focus{ border:2px solid #7f8c8d; color:#7f8c8d !important; }
+
+body div div.rt-container .btn.btn-silver:hover,
+body div div.rt-container .btn.btn-silver:active,
+body div div.rt-container .btn.btn-silver:focus{ background:#7f8c8d; }
+
+body div div.rt-container .btn.btn-pink{ background:#d13b7b; }
+
+body div div.rt-container .btn.btn-pink.btn-3,
+body div div.rt-container .btn.btn-pink.btn-4{ color:#d13b7b !important; border:2px solid #d13b7b; }
+
+body div div.rt-container .btn.btn-pink.btn-3:hover,
+body div div.rt-container .btn.btn-pink.btn-4:hover,
+body div div.rt-container .btn.btn-pink.btn-3:active,
+body div div.rt-container .btn.btn-pink.btn-4:active,
+body div div.rt-container .btn.btn-pink.btn-3:focus,
+body div div.rt-container .btn.btn-pink.btn-4:focus{ border:2px solid #9b2457; color:#9b2457 !important; }
+
+body div div.rt-container .btn.btn-pink:hover,
+body div div.rt-container .btn.btn-pink:active,
+body div div.rt-container .btn.btn-pink:focus{ background:#9b2457; }
+
+body div div.rt-container .btn.btn-red{ background:#ef4a44; }
+
+body div div.rt-container .btn.btn-red.btn-3,.btn.btn-red.btn-4{ color:#ef4a44 !important; border:2px solid #ef4a44; }
+
+body div div.rt-container .btn.btn-red.btn-3:hover,
+body div div.rt-container .btn.btn-red.btn-4:hover,
+body div div.rt-container .btn.btn-red.btn-3:active,
+body div div.rt-container .btn.btn-red.btn-4:active,
+body div div.rt-container .btn.btn-red.btn-3:focus,
+body div div.rt-container .btn.btn-red.btn-4:focus{ border:2px solid #d41912; color:#d41912 !important; }
+
+body div div.rt-container .btn.btn-red:hover,
+body div div.rt-container .btn.btn-red:active,
+body div div.rt-container .btn.btn-red:focus{ background:#d41912; }
+
+body div div.rt-container .btn.btn-purple{ background:#874f9a; }
+
+body div div.rt-container .btn.btn-purple.btn-3,
+body div div.rt-container .btn.btn-purple.btn-4{ color:#874f9a !important; border:2px solid #874f9a; }
+
+body div div.rt-container .btn.btn-purple.btn-3:hover,
+body div div.rt-container .btn.btn-purple.btn-4:hover,
+body div div.rt-container .btn.btn-purple.btn-3:active,
+body div div.rt-container .btn.btn-purple.btn-4:active,
+body div div.rt-container .btn.btn-purple.btn-3:focus,
+body div div.rt-container .btn.btn-purple.btn-4:focus{ border:2px solid #5b3567; color:#5b3567 !important; }
+
+body div div.rt-container .btn.btn-purple:hover,
+body div div.rt-container .btn.btn-purple:active,
+body div div.rt-container .btn.btn-purple:focus{ background:#5b3567; }
+
+body div div.rt-container .btn.btn-orange{ background:#ee7933; }
+
+body div div.rt-container .btn.btn-orange.btn-3,
+body div div.rt-container .btn.btn-orange.btn-4{ color:#ee7933 !important; border:2px solid #ee7933; }
+
+body div div.rt-container .btn.btn-orange.btn-3:hover,
+body div div.rt-container .btn.btn-orange.btn-4:hover,
+body div div.rt-container .btn.btn-orange.btn-3:active,
+body div div.rt-container .btn.btn-orange.btn-4:active,
+body div div.rt-container .btn.btn-orange.btn-3:focus,
+body div div.rt-container .btn.btn-orange.btn-4:focus{ border:2px solid #c45410; color:#c45410 !important; }
+
+body div div.rt-container .btn.btn-orange:hover,
+body div div.rt-container .btn.btn-orange:active,
+body div div.rt-container .btn.btn-orange:focus{ background:#c45410; }
+
+body div div.rt-container .btn.btn-blue{ background:#279fba; }
+
+body div div.rt-container .btn.btn-blue.btn-3,
+body div div.rt-container .btn.btn-blue.btn-4{ color:#279fba !important; border:2px solid #279fba; }
+
+body div div.rt-container .btn.btn-blue.btn-3:hover,
+body div div.rt-container .btn.btn-blue.btn-4:hover,
+body div div.rt-container .btn.btn-blue.btn-3:active,
+body div div.rt-container .btn.btn-blue.btn-4:active,
+body div div.rt-container .btn.btn-blue.btn-3:focus,
+body div div.rt-container .btn.btn-blue.btn-4:focus{ border:2px solid #1a697b; color:#1a697b !important; }
+
+body div div.rt-container .btn.btn-blue:hover,
+body div div.rt-container .btn.btn-blue:active,
+body div div.rt-container .btn.btn-blue:focus{ background:#1a697b; }
+
+body div div.rt-container .btn.btn-arrow{ position:relative; }
+
+body div div.rt-container .btn.btn-arrow:before,
+body div div.rt-container .btn.btn-arrow:after{ font-family:FontAwesome; }
+
+/*----- JD Social Button -----*/
+
+body .jd-social-button{
+	text-align:center;
+	display:inline-block;
+	.fa{ padding-right:10px; font-size:27px; /* border-right:1px solid #ddd;  */}
+	a{
+		min-width:200px;
+		border-radius:0;
+		font-weight:bold;
+		display:inline-block;
+		margin:10px 50px 10px 0;
+		text-transform:uppercase;
+		padding:10px 30px 10px 15px;
+	}
+	a:hover{ color:#fff; opacity:0.8; }
+	.facebook , .facebook:hover{ background:#3b5a9b !important; }
+	.twitter , .twitter:hover{ background:#49c8f5 !important; }
+	.linkedin , .linkedin:hover{ background:#0071aa !important; }
+	.behance , .behance:hover{ background:#0048B4 !important; }
+	.tumblr , .tumblr:hover{ background:#314358 !important; }
+	.stumbleupon , .stumbleupon:hover{ background:#EB4823 !important; }
+	.pinterest , .pinterest:hover{ background:#CB2027 !important; }
+	.googleplus , .googleplus:hover{ background:#DF4B38 !important; }
+	.youtube , .youtube:hover{ background:#CC2020 !important; }
+	.dribbble , .dribbble:hover{ background:#F26798 !important; }
+	.wordpress , .wordpress:hover{ background:#21759A !important; }
+	.dropbox , .dropbox:hover{ background:#007EE5 !important; }
+	.vimeo , .vimeo:hover{ background:#1AB7EA !important; }
+	.soundcloud , .soundcloud:hover{ background:#F74F0E !important; }
+	.spotify , .spotify:hover{ background:#1ED760 !important; }
+	.instagram , .instagram:hover{ background:#C8A87D !important; }
+	.foursquare , .foursquare:hover{ background:#F94877 !important; }
+	.skype , .skype:hover{ background:#00AFF0 !important; }
+	.yahoo , .yahoo:hover{ background:#7B0099 !important; }
+	
+	*{ color:#fff; }
+}
+
+.social_icon{
+	margin:0;
+	display:inline-block;
+	ul{ margin:0; display:inline-block; }
+	li{
+		float:left;
+		margin:0 2px;
+		min-width:41px;
+		min-height:37px;
+		list-style:none;
+		text-align:center;
+		background:#1ABC9C;
+		border-radius:100%;
+		border-radius:3px;
+		border:1px solid #1ABC9C;
+		&:hover{ background:#19A488; }
+		a{ display:block; }
+		.fa{ color:#fff; font-size:16px; line-height:38px; }
+	}
+}
+
+
+body{
+	.btn , .btn-default ,.button, .k2ReadMore , .readon, .readmore, button.validate, #member-profile a,
+	#member-registration a,.formelm-buttons button, button.btn-primary,.btn-primary,.gbs3 .form-group .btn-default, .btn-default,.moduleItemReadMore, div.itemCommentsForm form input#submitCommentButton, .itemBackToTop a, 
+	button, input[type="button"], input[type="reset"], input[type="submit"]	,.button, .logout-button .btn.btn-primary,
+	.chronoform .btn-default, .chronoform.btn.btn-default,.control-buttons button.default,#comment-form #submitCommentButton , #jevents a.jev_back,.sprocket-tables-link .readon{
+		height:auto;
+		font-size:18px;
+		box-shadow:none;
+		text-shadow:none;
+		padding:8px 12px;
+		border-radius:3px;
+		line-height:normal;
+		background:#1ABC9C;
+		margin:0 10px 5px 0;
+		display:inline-block;
+		color:#fff !important;
+		text-transform:capitalize;
+		border:2px solid transparent;
+		&:hover,&:focus{
+			color:#fff;
+			box-shadow:none;
+			text-shadow:none;
+			border-radius:3px;
+			background:#19A488;
+			outline:none !important;
+			border:2px solid transparent;
+		}
+	}
+}
+
+// Branding
+.powered-by {
+	background: url(../images/logo/powered.png);
+}
+
+// Typography
+.pagenav {
+	li {
+		background: @bodybackground2;
+		border: 1px solid @bodyborder;
+		box-shadow: inset 0 0 0 1px @white, 0 1px 2px rgba(0,0,0,0.2);
+	}
+}
+.login-fields #username, .login-fields #password, #contact-form dd input, #contact-form dd textarea, #modlgn-username, #modlgn-passwd, #jform_email, #member-registration dd input, #search-searchword, .finder .inputbox, .inputbox {
+	border: 1px solid #d9d9d9;
+}
+.component-content {
+	.contact {
+		.title {
+			#gradient > .vertical(@bodycontrast, @bodyborder2);
+			border: 1px solid @bodyborder;
+			text-shadow: 0 1px 1px rgba(255,255,255,.75);
+		}
+	}
+}
+.pagination {
+	ul {
+		li {
+			a {
+				#gradient > .vertical(@bodycontrast, @bodyborder2);
+				border: 1px solid @bodyborder;
+				text-shadow: 0 1px 1px rgba(255,255,255,.75);
+			}
+			span {
+				background: @bodybackground4;
+				border: 1px solid @bodyborder;
+				color: @bodytextlight;
+			}
+		}
+	}
+}
+.breadcrumbs, .breadcrumb {
+	a {
+		&:after {
+			color: @bodytextlight;
+		}
+	}
+	.showHere {
+		font-weight: bold;
+		margin-right: 5px;
+	}
+	.divider{ display:none; }
+}
+.article-info {
+	&.muted {
+		color: inherit;
+	}
+	dd:before {
+		text-shadow: 1px 1px 0 @bodycontrast;
+	}
+}
+
+// Extras
+#gantry-totop {
+	background: @bodybackground2;
+	border: 1px solid @bodyborder;
+	box-shadow: inset 0 0 0 1px @white, 0 1px 2px rgba(0,0,0,0.2);
+	&:active {
+		.box-shadow(0 1px 0 @bodycontrast);
+	}
+}
+.tip-wrap {
+	background: @bodycontrast;
+	.box-shadow(0 0 5px rgba(0,0,0,0.3));
+	color: @bodytext;
+}
+.system-unpublished .system-unpublished {
+	background: @bodycontrast;
+	border-color: @bodyborder;
+}
+
+// Typography
+.tags .label-info {
+	background: darken(@linkcolor, 10%);
+}
+
+// Abbreviations and acronyms
+abbr[title] {
+  border-bottom: 1px dotted @bodyborder;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 5px solid @bodyborder;
+  small {
+    color: @bodytextlight;
+  }
+
+  &.pull-right {
+    border-right: 5px solid @bodyborder;
+  }
+}
+
+// Forms
+legend {
+  color: @bodytitle;
+  border-bottom: 1px solid @bodyborder;
+
+  small {
+    color: @bodyborder;
+  }
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  color: @bodytext;
+}
+body .rt-block{
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	.uneditable-input {
+		box-shadow:none;
+		height:auto;
+		border:1px solid @bodyborder;
+		background:#fff;
+		&:hover,&:focus{
+			 border-color:#1ABC9C;
+		}
+	}
+}
+
+select {
+  border: 1px solid @bodyborder;
+}
+
+// Uneditable inputs
+.uneditable-input,
+.uneditable-textarea {
+  color: @bodytextlight;
+  background-color: @bodybackground;
+  border-color: @bodyborder;
+  .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
+}
+
+// Inputs
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  border-color: @bodyborder;
+}
+
+.input-prepend,
+.input-append {
+  .add-on {
+    text-shadow: 0 1px 0 @bodycontrast;
+    background-color: @bodybackground2;
+    border: 1px solid @bodyborder;
+  }
+  &.input-append .media-preview {
+  	margin: 0;
+  }
+}
+
+// Form Actions
+.form-actions {
+  background-color: @bodybackground2;
+  border-top: 1px solid @bodyborder;
+}
+
+.uneditable-input {
+  background-color: @inputBackground;
+  border-color: #eeeeee;
+  .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
+}
+
+// Help Text
+.help-block,
+.help-inline {
+  color: @gray;
+}
+
+// Extras
+.table-bordered th {
+	background-color: @bodybackground2;
+}
+.well {
+	background-color: transparent;
+	border: none;
+	.box-shadow(none);
+}
+
+.nav-tabs.nav-stacked > li > a {
+	background-color: @bodybackground2;
+	&:hover {
+		background-color: @bodybackground4;
+	}
+}
+
+.list-striped li:nth-child(odd),
+.list-striped dd:nth-child(odd),
+.row-striped .row:nth-child(odd),
+.row-striped .row-fluid:nth-child(odd),
+.cat-list-row0 {
+	background-color: @bodybackground4;
+}
+
+.list-striped li:hover,
+.list-striped dd:hover,
+.row-striped .row:hover,
+.row-striped .row-fluid:hover,
+.cat-list-row0:hover, .cat-list-row1:hover {
+	background-color: @bodybackground3;
+}
+
+.filter-search.alert-info {
+	background-color: transparent;
+	border-color: transparent;
+	color: inherit;
+	.inputbox {
+		color: @bodyTextDark;
+	}
+}
+
+// Notice Styles
+p {
+	&.success, &.info, &.error, &.warning {
+		.border-radius(6px);
+		padding: 15px;
+		font-weight: bold;
+		border: 1px solid;
+		a {
+			color: #666 !important;
+			&:hover {
+				color: #000 !important;
+				text-shadow: none;
+			}
+		}			
+	}
+	&.success {
+		background: @successBackground;
+		border-color: @successBorder;
+		color: @successText;
+	}
+	&.info {
+		background: @infoBackground;
+		border-color: @infoBorder;
+		color: @infoText;
+	}
+	&.error {
+		background: @errorBackground;
+		border-color: @errorBorder;
+		color: @errorText;
+	}
+	&.warning {
+		background: @warningBackground;
+		border-color: @warningBorder;
+		color: @warningText;
+	}
+}
+
+
+/*----- Nav Menu -----*/
+
+.nav.menu{ list-style:none; }
+
+body .nav > li > a:hover , body .nav > li > a:focus{ background:none; }
+
+a:focus, a:hover{ outline:none !important; }

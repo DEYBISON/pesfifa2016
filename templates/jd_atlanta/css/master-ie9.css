@@ -1,0 +1,7 @@
+.readon, .rt-block {
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+}
+
+ul.menu li.active.current > a:before, ul.menu li.active.current > .item:before, ul.menu li.active.current > .separator:before,
+ul.menu #current.active > a:before, ul.menu #current.active > .item:before, ul.menu #current.active > .separator:before {font-size: 15px;}
+

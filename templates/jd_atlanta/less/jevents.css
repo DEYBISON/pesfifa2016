@@ -1,0 +1,236 @@
+#jevents_body .new-navigation .nav-items div{ border:none; border-radius:0; }
+
+#jevents_body .new-navigation .nav-items div a  {
+	margin:0 6px;
+	color:#1F2A30;
+	padding:8px 5px;
+	border-radius:none;
+	text-decoration:none;
+	border-bottom:2px solid transparent;
+}
+
+#jevents_body .new-navigation .nav-items div.active a ,
+#jevents_body .new-navigation .nav-items div a:hover,
+#jevents_body .new-navigation .nav-items div.active a:hover{
+	background:none;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-radius:0;
+	border-bottom:2px solid #1f2a30;
+}
+
+#jevents_body{
+	border:none;
+	padding-top:0;
+	background:#fff;
+	border-radius:0;
+}
+
+#jevents_body .month_date{ background:#F5F5F5; color:#1F2A30; margin-bottom:0; padding:10px 0; }
+#jevents_body .new-navigation{
+	color:#1F2A30;
+	padding:10px 0;
+	border-radius:6px;
+	background:#F5F5F5;
+	margin-bottom:10px;
+	border:1px solid #ddd;
+}
+#jevents_body .new-jev_toprow.jev_monthv{ background:#F5F5F5; color:#1F2A30; margin-bottom:0; padding:10px 0; }
+
+#jevents_body .cal_table{
+	background:none;
+}
+
+#jevents_body .cal_daysoutofmonth{ display:none; }
+
+#jevents_body .cal_today a.cal_daylink ,
+#jevents_body .cal_today a.cal_daylink:hover,
+#flatcal_minical .flatcal_todaycell a,
+#flatcal_minical .flatcal_todaycell a:hover{ background:#1f2a30; border-radius:0; border:none; color:#fff !important; }
+
+#jevents_body .jev_listrow ul.ev_ul{}
+
+#jevents_body .jev_listrow ul.ev_ul li{
+	margin:10px 0;
+	padding-top:5px;
+	padding-left:10px;
+	padding-bottom:5px;
+	border-top:1px solid #ddd !important;
+	border-right:1px solid #ddd !important;
+	border-bottom:1px solid #ddd !important;
+}
+.jev_toprow div.previousmonth, .jev_toprow div.nextmonth{
+	border:none;
+	background:none;
+}
+
+.jev_toprow div.currentmonth{
+	color:#1f2a30 !important;
+	border:none;
+}
+
+.month_title_year, .month_date, .month_title{
+	text-align:center;
+}
+
+.cal_table tr.cal_cell_rows td{
+	border:1px solid #ddd;
+}
+
+#jevents_body .jev_toprow div.previousmonth a{
+	background:url(../images/mini_arrowleft.png) no-repeat left center !important;
+}
+
+#jevents_body .jev_toprow div.nextmonth a {
+	background:url(../images/mini_arrowright.png) no-repeat right center !important;
+}
+
+/*----- Buttons -----*/
+
+#jevents_body #jumpto form button{
+	border:none;
+	border:none;
+	font-size:15px;
+	padding:8px 15px;
+	text-shadow:none;
+	font-weight:bold;
+	border-radius:3px;
+	background:#5ad2a9;
+	color:#fff !important;
+	width:auto !important;
+}
+
+#jevents_body #jumpto form button:hover , #jevents_body #jumpto form button:focus{
+	background:#7BDBBA;
+}
+
+.ev_adminpanel input[type="button"]{ background:#5ad2a9; color:#fff; border:none; padding:5px 10px; }
+
+.ev_adminpanel input[type="button"]:hover ,
+.ev_adminpanel input[type="button"]:focus{ background:#7BDBBA; }
+
+#jevents_body #jev_maincal.jev_listview .jev_daysnames{
+	width:auto;
+	height:auto;
+	border:none;
+	color:#1F2A30;
+	font-size:23px;
+	padding:6px 10px;
+	background:none;
+}
+
+/*----- Pagination -----*/
+
+.jev_pagination .limit{ float:none !important; }
+ul.pagination-list li.disabled{ display:none; }
+.jev_pagination ul.pagination-list li a,
+.jev_pagination ul.pagination-list li span{ line-height:20px; }
+
+.jevbootstrap .pagination ul > li > a:hover,
+.jevbootstrap .pagination ul > li > a:focus,
+.jevbootstrap .pagination ul > .active > a,
+.jevbootstrap .pagination ul > .active > span{
+	background:none;
+}
+
+/* ul.pagination-list{border:1px solid #ddd;}
+ul.pagination-list li{ min-height:26px; border-left:1px solid #ddd; }
+ul.pagination-list li a , ul.pagination-list li span{ color:#455a64; line-height:26px; }
+ul.pagination-list li.active{  } */
+
+
+ul.actions{}
+ul.actions a{}
+ul.actions a:hover{ text-decoration:none; }
+
+
+/*----- Sidebar Calendar ---*/
+table.flatcal_main_t{ width:100%; }
+#flatcal_minical a{ font-size:18px; }
+
+#jevents_body .jev_listrow ul.ev_ul li{ font-size:10px; }
+
+a.ev_link_row:link, a.ev_link_row:visited, a.ev_link_row:hover{
+	color:#455a64;
+	font-size:16px;
+}
+
+.mod_events_latest_table td{ font-size:12px; }
+.mod_events_latest_table .mod_events_latest_content{ font-size:18px; }
+
+.event_legend_container{}
+.event_legend_container tr td.legend{ padding-left:5px; }
+
+.jevbootstrap [class^="icon-"], .jevbootstrap [class*=" icon-"]{ background:none; }
+
+
+body div select#jos_change_view{
+	margin:0;
+	background:none;
+	border:1px solid #ddd;
+	color:#455a64 !important;
+}
+
+table.jevfiltertable{}
+table.jevfiltertable tr{ margin:0 0 10px; display:block; }
+table.jevfiltertable tr td{ width:100%; display:block; }
+
+table.jevfiltertable  input[type="button"],
+table.jevfiltertable input[type="reset"],
+table.jevfiltertable input[type="submit"]{
+	border:none;
+	border:none;
+	font-size:15px;
+	padding:8px 15px;
+	text-shadow:none;
+	font-weight:bold;
+	border-radius:3px;
+	background:#5ad2a9;
+	color:#fff !important;
+	width:auto !important;
+}
+
+select#catid{ padding:5px 10px; }
+
+div#jevents .adminform input,
+div#jevents .adminformtextarea,
+div#jevents .adminforminputbox,
+div#jevents #rinterval.adminform,
+div#jevents #count.adminform,
+div#jevents #until.adminform{ padding:9px 5px 10px; }
+
+#end_ampm .btn{ margin:0; }
+
+div.export_form{ margin:0 auto; display:block; overflow:hidden; }
+
+.jevbootstrap input[type="radio"], .jevbootstrap input[type="checkbox"]{ margin:0 5px 2px 0; }
+
+h3.export_pub{ padding-left:20px; }
+h3.export_priv{ padding-right:20px; }
+
+div.ical_form_button a{ background:#5ad2a9; color:#fff; }
+div.ical_form_button a:hover , div.ical_form_button a:focus ,
+div.ical_form_button a:active{ background:#5DD6FF; color:#fff; text-decoration:none; }
+
+div.ical_form_button.export_public a ,
+div.ical_form_button.export_private a{ width:auto; margin:5px 20px; padding:7px 15px; }
+
+body #jevents_body div.event_legend_name{ border-left-width:4px; }
+
+.jev_pagination .pagination{ height:auto; }
+
+.jev_pagination .pagination li{ border:none !important; padding-left:0 !important; padding-right:0 !important; }
+
+div.ev_adminpanel{ padding:10px; background:#ececec; }
+
+div.ev_adminpanel form div{ padding:0; }
+
+.nav_bar_cell form > div { padding:10px !important; }
+
+.ev_adminpanel a:hover , .ev_adminpanel a:focus{ text-decoration:none; }
+
+
+@media screen and (max-width:420px){
+	#jevents_body .cal_top_day_names{ min-width:auto; }
+}
